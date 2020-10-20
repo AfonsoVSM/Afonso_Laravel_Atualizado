@@ -41,12 +41,10 @@ Route::get('/repetir/{nome}/{num}', function ($nome, $n){
 		echo ('<h1>Olá '.$nome. '</h1>');
 	};
 	return;
-
-	Route::get('/welcome/', function (){
+});
+Route::get('/welcome/', function (){
 		return view ('bemvindo');
 	});
-});
-
 Route::get('nome/{nome}/{apelido}',
 function($nome=null, $apelido=null){
 	return view('mostranome',['nome'=>$nome,'apelido'=>$apelido]);
@@ -54,7 +52,7 @@ function($nome=null, $apelido=null){
 
 Route::get('/tarefas', function(){
 	$tarefas=[
-		'Comprr Senha',
+		'Comprar Senha',
 		'Imprimir fotocópias',
 		'Carregar cartão',
 	];
@@ -62,8 +60,9 @@ Route::get('/tarefas', function(){
 		'tarefas'=>$tarefas]);
 });
 
-Route::get('/', 'App\Http\Controllers\PortalControler@index');
 
-Route::get('listar-equipas', 'App\Http\Controllers\PortalController@listarEquipas');
+/*Route::get('/', 'PortalControler@index');
 
-Route::get('/listar.equipas/{chaves}','App\Http\Controllers\PortalController@listarEquipas');
+Route::get('listar-equipas', 'PortalController@listarEquipas');
+
+Route::get('/listar.equipas/{chaves}','PortalController@listarEquipas');*/
